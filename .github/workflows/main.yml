@@ -1,0 +1,25 @@
+name: Daily YouTube Kids Story Upload
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install packages
+        run: pip install requests gtts moviepy google-auth google-auth-oauthlib google-api-python-client pillow numpy
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg fonts-liberation
+      - name: Run bot
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+        run: python youtube_bot.py
