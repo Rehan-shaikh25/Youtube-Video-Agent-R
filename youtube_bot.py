@@ -69,7 +69,7 @@ STORY_TOPICS = [
 def generate_story():
     """Generate a kids cartoon story using Gemini API"""
     print("\n📖 Generating story with Gemini AI...")
-
+ 
     topic = random.choice(STORY_TOPICS)
 
     if LANGUAGE == "hindi":
