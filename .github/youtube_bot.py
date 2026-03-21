@@ -11,7 +11,7 @@ APIs Used:
 - ElevenLabs (Free tier) - English voice
 - gTTS (Completely Free) - Hindi voice
 - MoviePy (Free library) - Video creation
-- YouTube Data API v3 - Upload video
+- YouTube Data API v3 - Upload video 
 
 Required GitHub Secrets:
 - GEMINI_API_KEY
