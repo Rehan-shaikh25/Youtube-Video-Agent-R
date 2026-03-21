@@ -1,4 +1,4 @@
-name: Daily YouTube Kids Story Upload
+.name: Daily YouTube Kids Story Upload
 
 on:
   schedule:
